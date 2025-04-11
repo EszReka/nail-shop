@@ -7,7 +7,21 @@ import { AfterViewInit, Component, EventEmitter, OnInit, Output } from '@angular
   styleUrl: './menu.component.css'
 })
 export class MenuComponent implements OnInit, AfterViewInit {
-  @Output() selectedPage : EventEmitter<string> = new EventEmitter();ű
+
+   @Output() pageChanged = new EventEmitter<string>();
+
+  menuValue:boolean=false;
+  menu_icon :string ='&#9776';
+
+  openMenu(){
+     this.menuValue =! this.menuValue ;
+     this.menu_icon = this.menuValue ? '&#10005;' : '&#9776;';
+   }
+   closeMenuAndSelectPage(page: string) {
+     this.menuValue = false;
+     this.menu_icon = 'bi bi-list';
+     this.pageChanged.emit(page);
+   }
 
   ngOnInit(): void {
     
@@ -15,10 +29,6 @@ export class MenuComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     
-  }
-
-  menuSwitch(pageValue: string){
-    this.selectedPage.emit(pageValue);
   }
 
 

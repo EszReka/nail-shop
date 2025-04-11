@@ -1,9 +1,24 @@
 <header>
-    <div class="logo">Pretty Tips 💅</div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Services</a>
-      <a href="#">Gallery</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
+    <div class="container">
+      <div class="row d-flex align-items-center">
+          <div class="col-md-3 col-sm-3 col-3">
+              <div class="logo">
+                  <img src="images/logo.png" class="logo" alt="logo">
+              </div>
+          </div>
+          <div class="col-md-9 col-sm-9 col-9 text-end">
+              <div class="menu-icon" (click)="openMenu()">
+                  <i class="{{menu_icon}}"></i>
+              </div>
+              <div class="desktop-menu" [class.mobile-menu]="menuValue">
+                  <ul>
+                      <li (click)="closeMenuAndSelectPage('home');">Home</li>
+                      <li (click)="closeMenuAndSelectPage('about');">About</li>
+                      <li (click)="closeMenuAndSelectPage('cart');">Cart</li>
+                      <li (click)="closeMenuAndSelectPage('profile');">Profile</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+</header>

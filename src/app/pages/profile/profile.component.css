@@ -1,0 +1,132 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body and Background */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fce4ec; /* Light pink background */
+    color: #333;
+  }
+
+  
+  .header .logo {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .header nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .header nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Profile Section */
+  .profile-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f8bbd0; /* Lighter pink */
+  }
+  
+  .profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  .profile-name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #e91e63;
+  }
+  
+  .profile-description {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Edit Profile Form */
+  .edit-profile {
+    padding: 40px 20px;
+    background-color: #fce4ec; /* Light pink background */
+    margin-top: 20px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #e91e63;
+  }
+  
+  .profile-form, .address-form {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f8bbd0; /* Light pink background */
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: #e91e63; /* Focus border color */
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #e91e63;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .submit-btn:hover {
+    background-color: #d81b60;
+  }
+  
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #e91e63;
+    color: white;
+    margin-top: 40px;
+  }
+  

@@ -1,26 +1,86 @@
 header {
-    background-color: #ffb6c1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    border-bottom: 2px solid #f08ca3;
+  padding: 10px;
+  background-color: #ffb6c1;
+}
+
+header .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo {
+  max-width: 100%;
+  height: auto;
+}
+
+.logo img {
+  height: 80px;
+  width: auto;
+  max-width: 100%;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+.desktop-menu {
+ /* margin-top: 24px;*/
+ align-items: center
+}
+.desktop-menu ul {
+  padding: 0;
+  margin: 0;
+}
+.desktop-menu ul li {
+  list-style-type: none;
+  color: white;
+  display: inline-block;
+  font-size: 18px;
+  margin-left: 26px;
+}
+.desktop-menu ul li:hover {
+  font-size: 19px;
+  font-weight: bold;
+  cursor: pointer;
+  color: yellow;
+  transition: 0.3s ease-in-out;
+}
+.menu-icon {
+  display: none;
+  justify-content: flex-end;
+  gap: 20px;
+  align-items: center;
+  font-size: 30px;
+  color: #5c2a4d;
+}
+
+@media screen and (min-width: 128px) and (max-width: 900px) {
+  .desktop-menu {
+    position: fixed !important;
+    right: -280px;
+    transition: 0.4s ease-in-out;
+    top: 64px;
+    background: #ffb6c1;
+    width: 280px;
+    height: 100%;
   }
-  
-  .logo {
-    font-family: 'Sacramento', cursive;
-    font-size: 2.5rem;
-    color: #fff;
+  .desktop-menu ul li {
+    display: block;
+    text-align: left;
+    margin: 0;
+    padding: 10px 0 10px 26px;
+    border-bottom: 1px solid grey;
   }
-  
-  nav a {
-    margin-left: 1.5rem;
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    transition: color 0.3s ease;
+  .menu-icon {
+    display: block;
+    color: white;
+    font-size: 40px;
+    padding-top: 10px;
   }
-  
-  nav a:hover {
-    color: #ffe4e1;
+  .mobile-menu {
+    right: 0;
+    transition: 0.4s ease-in-out;
   }
+}

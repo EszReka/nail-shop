@@ -14,4 +14,8 @@ import { NgIf } from '@angular/common';
 export class AppComponent {
   title = 'nail-shop';
   page = "home";
+
+  changePage(page: string){
+    this.page = page;
+   }
 }
