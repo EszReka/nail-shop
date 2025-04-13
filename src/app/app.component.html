@@ -1,4 +1,17 @@
 <app-menu (pageChanged)="changePage($event)"></app-menu>
 
 <app-home *ngIf="page === 'home'"></app-home>
-<app-profile *ngIf="page === 'profile'"></app-profile>
+
+<app-profile 
+  *ngIf="page === 'profile' && currentUser"
+  [user]="currentUser">
+</app-profile>
+
+
+
+<app-product *ngIf="page === 'product'"></app-product>
+<app-cart *ngIf="page === 'cart'"></app-cart>
+
+<footer class="footer">
+    <p>&copy; 2025 Nail Shop | All Rights Reserved</p>
+  </footer> 

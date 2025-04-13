@@ -1,8 +1,31 @@
-<p>cart works!</p>
-<!-- product-list.component.html -->
-<ul>
-    <li *ngFor="let product of products">
-      {{ product.name }} - {{ product.price }}$
-    </li>
-  </ul>
-  
+<div class="cart-container">
+  <h2>Your Cart</h2>
+
+  <div class="cart-item" *ngFor="let item of cartItems">
+    <mat-card class="cart-card">
+      <div class="card-content-wrapper">
+        <img class="cart-image" [src]="item.picture" alt="{{ item.product_name }}">
+
+        <div class="cart-text-wrapper">
+          <mat-card-content class="cart-text">
+            <h3>{{ item.product_name }}</h3>
+            <p>{{ item.details }}</p>
+            <p [style.color]="item.price < 1000 ? 'crimson' : 'green'">
+              Price: {{ item.price | priceFormat }}
+            </p>
+          </mat-card-content>
+
+          <div class="spinner-wrapper">
+            <button mat-mini-button color="primary" (click)="changeQuantity(item, -1)">−</button>
+            <span class="quantity-value">{{ item.itemCount }}</span>
+            <button mat-mini-button color="primary" (click)="changeQuantity(item, 1)">+</button>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+  <div class="total">
+    <h3>Price: {{ total | priceFormat:'HUF' }}</h3>
+  </div>
+</div>

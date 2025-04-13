@@ -1,77 +1,72 @@
-  <!-- Profile Section -->
-<body>
   <section class="profile-section">
     <div class="profile-container">
-      <h1 class="profile-name">Jane Doe</h1>
+      <h1 class="profile-name">{{ user.name }}</h1>
       <p class="profile-description">I have ordered x times, in x value in the span of x time.</p>
     </div>
   </section>
 
-
-  <section class="edit-profile">
-    <h2 class="section-title">Edit Profile</h2>
-    <form class="profile-form">
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" value="janedoe@example.com" required>
-      </div>
-      
-      <div class="form-group">
-        <label for="phone">Mobile Phone</label>
-        <input type="tel" id="phone" name="phone" value="+1234567890" required>
-      </div>
-      
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" value="********" required>
-      </div>
-
-      <!-- Submit Button -->
-      <div class="form-group">
-        <button type="submit" class="submit-btn" (click)="onSave(user)">Save Profile Changes</button>
-      </div>
-    </form>
-  </section>
-
-  <!-- Delivery Address Form Section -->
-  <section class="edit-address">
-    <h2 class="section-title">Edit Delivery Address</h2>
-    <form class="address-form">
-      <div class="form-group">
-        <label for="address">Street Address</label>
-        <input type="text" id="address" name="address" value="123 Nail St" required>
-      </div>
-
-      <div class="form-group">
-        <label for="city">City</label>
-        <input type="text" id="city" name="city" value="Nail City" required>
-      </div>
-
-      <div class="form-group">
-        <label for="state">State</label>
-        <input type="text" id="state" name="state" value="Nail State" required>
-      </div>
-
-      <div class="form-group">
-        <label for="postalCode">Postal Code</label>
-        <input type="text" id="postalCode" name="postalCode" value="12345" required>
-      </div>
-
-      <div class="form-group">
-        <label for="country">Country</label>
-        <input type="text" id="country" name="country" value="CountryName" required>
-      </div>
-
-      <!-- Submit Button -->
-      <div class="form-group">
-        <button type="submit" class="submit-btn" (click)="onSaveAdress(adress)">Save Address Changes</button>
-      </div>
-    </form>
-  </section>
+<div class="card-holder">
+<mat-card class="edit-profile-card">
+  <mat-toolbar color="primary">
+    <mat-icon>person</mat-icon>
+    <span>Edit Profile</span>
+  </mat-toolbar>
 
 
-  <!-- Footer Section -->
-  <footer class="footer">
-    <p>&copy; 2025 Nail Shop | All Rights Reserved</p>
-  </footer>
-</body>
+  <form #profileForm="ngForm" (ngSubmit)="onSave(user)">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" name="email" [(ngModel)]="user.email" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Mobile Phone</mat-label>
+      <input matInput type="tel" name="phone" [(ngModel)]="user.phone" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" name="password" [(ngModel)]="user.password" required>
+    </mat-form-field>
+
+    <mat-divider class="my-3"></mat-divider>
+
+    <button mat-raised-button color="accent" type="submit">
+      <mat-icon>save</mat-icon> Save Profile Changes
+    </button>
+  </form>
+</mat-card>
+
+
+    <mat-card class="edit-address-card ">
+      <mat-toolbar color="primary">
+        <mat-icon>mail</mat-icon>
+        <span>Edit Address</span>
+      </mat-toolbar>
+
+      <form (ngSubmit)="onSaveAdress(addressToUpdate)" #addressForm="ngForm">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Street Address</mat-label>
+          <input matInput type="text" id="address" name="street" [(ngModel)]="addressToUpdate.street" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>City</mat-label>
+          <input matInput type="text" id="city" name="city" [(ngModel)]="addressToUpdate.city" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Postal Code</mat-label>
+          <input matInput type="text" id="postalCode" name="postalcode" [(ngModel)]="addressToUpdate.postalcode" required>
+        </mat-form-field>
+        
+        <mat-divider class="my-3"></mat-divider>
+  
+        <div class="form-group">
+          <button mat-raised-button color="accent" type="submit" [disabled]="!addressForm.valid">
+            <mat-icon>save</mat-icon> Save Address Changes
+          </button>
+        </div>
+      </form>
+    </mat-card>
+ </div> 

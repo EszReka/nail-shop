@@ -1,0 +1,15 @@
+.highlight {
+    background-color: #fce4ec; /* világos rózsaszín háttér */
+    border: 2px solid #e91e63;
+  }
+
+  .mat-card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  button {
+    margin-left: auto;
+  }
+  

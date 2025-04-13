@@ -1,0 +1,68 @@
+.auth-container {
+    max-width: 400px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .auth-card {
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  mat-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #f8bbd0;
+    padding: 12px;
+    border-radius: 12px 12px 0 0;
+  }
+  
+  mat-card-header mat-icon {
+    color: #d81b60;
+    font-size: 32px;
+  }
+  
+  h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #d81b60;
+    margin: 0;
+  }
+  
+  .full-width {
+    width: 100%;
+    margin-top: 12px;
+  }
+  
+  .auth-button {
+    width: 100%;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  .login-card {
+    margin: 1rem;
+    padding: 1.5rem;
+    background-color: #fff0f6;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(255, 105, 180, 0.2);
+  }
+  
+  .full-width {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .error-msg {
+    color: crimson;
+    margin-top: 1rem;
+  }
+  
+  .welcome-msg {
+    margin-top: 1rem;
+    color: mediumvioletred;
+    font-weight: bold;
+  }
+  

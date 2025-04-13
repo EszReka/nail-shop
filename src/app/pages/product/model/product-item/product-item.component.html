@@ -1,0 +1,17 @@
+<mat-card 
+  class="product-card"
+  [ngClass]="{ 'highlight': price < 1000 }"
+  [ngStyle]="{ 'border-radius': '12px', 'box-shadow': '0 4px 12px rgba(0,0,0,0.1)' }"
+>
+  <img mat-card-image [src]="picture" alt="{{ product_name }}">
+  <mat-card-content>
+    <h3>{{ product_name }}</h3>
+    <p>{{ details }}</p>
+    <p [style.color]="price < 1000 ? 'crimson' : 'green'">
+      Price: {{ price | priceFormat }}
+    </p>
+    <button mat-icon-button (click)="addToCart()" aria-label="Add to cart">
+      <mat-icon matBadge="{{ itemCount }}" matBadgeColor="warn">shopping_cart</mat-icon>
+    </button>
+  </mat-card-content>
+</mat-card>

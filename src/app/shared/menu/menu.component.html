@@ -12,10 +12,12 @@
               </div>
               <div class="desktop-menu" [class.mobile-menu]="menuValue">
                   <ul>
-                      <li (click)="closeMenuAndSelectPage('home');">Home</li>
-                      <li (click)="closeMenuAndSelectPage('about');">About</li>
-                      <li (click)="closeMenuAndSelectPage('cart');">Cart</li>
-                      <li (click)="closeMenuAndSelectPage('profile');">Profile</li>
+                    <li (click)="closeMenuAndSelectPage(currentUser ? 'home' : 'logout')">
+                        {{ currentUser ? 'Logout' : 'Login' }}
+                      </li>
+                      <li (click)="closeMenuAndSelectPage('product');">Products</li>
+                    <li (click)="closeMenuAndSelectPage('cart');">Cart</li>
+                    <li (click)="closeMenuAndSelectPage('profile');">Profile</li>
                   </ul>
               </div>
           </div>

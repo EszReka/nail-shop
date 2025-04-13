@@ -1,132 +1,151 @@
-/* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Body and Background */
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #fce4ec; /* Light pink background */
-    color: #333;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  
-  .header .logo {
-    color: white;
-    font-size: 2rem;
-    font-weight: bold;
-  }
-  
-  .header nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-size: 1rem;
-  }
-  
-  .header nav a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Profile Section */
-  .profile-section {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #f8bbd0; /* Lighter pink */
-  }
-  
-  .profile-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
-  }
-  
-  .profile-name {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #e91e63;
-  }
-  
-  .profile-description {
-    font-size: 1.2rem;
-    color: #666;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  /* Edit Profile Form */
-  .edit-profile {
-    padding: 40px 20px;
-    background-color: #fce4ec; /* Light pink background */
-    margin-top: 20px;
-  }
-  
-  .section-title {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 30px;
-    color: #e91e63;
-  }
-  
-  .profile-form, .address-form {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  .form-group label {
-    display: block;
-    font-size: 1rem;
-    margin-bottom: 8px;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 12px;
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f8bbd0; /* Light pink background */
-  }
-  
-  .form-group input:focus {
-    outline: none;
-    border-color: #e91e63; /* Focus border color */
-  }
-  
-  .submit-btn {
-    width: 100%;
-    padding: 12px;
-    background-color: #e91e63;
-    color: white;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  
-  .submit-btn:hover {
-    background-color: #d81b60;
-  }
-  
-  /* Footer */
-  .footer {
-    text-align: center;
-    padding: 10px 20px;
-    background-color: #e91e63;
-    color: white;
-    margin-top: 40px;
-  }
-  
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #fce4ec; 
+  color: #333;
+  size: 100%
+}
+
+.card-holder{
+  background-color: #fce4ec;
+}
+
+.header {
+  text-align: center;
+  background-color: #f8bbd0; 
+  padding: 20px 0;
+}
+
+.header .logo {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.header nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.header nav a:hover {
+  text-decoration: underline;
+}
+
+.profile-section {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f8bbd0; 
+}
+
+.profile-container {
+  margin-bottom: 20px;
+}
+
+.profile-name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e91e63;
+}
+
+.profile-description {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.edit-profile {
+  padding: 40px 20px;
+  background-color: #fce4ec; 
+  margin-top: 20px;
+}
+
+.section-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #e91e63;
+}
+
+.profile-form, .address-form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.mat-form-field .mat-input-element {
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+.mat-form-field .mat-label {
+  font-size: 1rem;
+  color: #e91e63;
+}
+
+.mat-form-field .mat-input-element:focus {
+  border-color: #e91e63; 
+}
+
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #e91e63;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button[type="submit"]:hover {
+  background-color: #d81b60;
+}
+
+.edit-profile-card, .edit-address-card {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 16px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.my-3 {
+  margin: 24px 0;
+}

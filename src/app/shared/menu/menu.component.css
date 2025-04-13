@@ -44,7 +44,7 @@ header .row {
   font-size: 19px;
   font-weight: bold;
   cursor: pointer;
-  color: yellow;
+  color: rgb(188, 11, 123);
   transition: 0.3s ease-in-out;
 }
 .menu-icon {
@@ -60,7 +60,7 @@ header .row {
   .desktop-menu {
     position: fixed !important;
     right: -280px;
-    transition: 0.4s ease-in-out;
+    transition: 0.8s ease-in-out;
     top: 64px;
     background: #ffb6c1;
     width: 280px;
@@ -78,9 +78,11 @@ header .row {
     color: white;
     font-size: 40px;
     padding-top: 10px;
+    z-index: 5;
   }
   .mobile-menu {
     right: 0;
     transition: 0.4s ease-in-out;
+    z-index: 1;
   }
 }
