@@ -17,7 +17,7 @@
             <input matInput type="password" [(ngModel)]="loginPassword" name="loginPassword" required />
           </mat-form-field>
   
-          <button mat-raised-button color="primary" type="submit" class="auth-button">Login</button>
+          <button mat-raised-button color="primary" type="submit" class="auth-button">{{ 'login' | emojiFormat }}</button>
           <div class="error-msg" *ngIf="loginError">{{ loginError }}</div>
     <div class="welcome-msg" *ngIf="loggedInUser">
       Welcome, {{ loggedInUser.name }}!
@@ -35,6 +35,11 @@
       <mat-card-content>
         <form (ngSubmit)="onRegister()">
           <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" [(ngModel)]="registerName" name="registerName" required />
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
             <mat-label>Email</mat-label>
             <input matInput type="email" [(ngModel)]="registerEmail" name="registerEmail" required />
           </mat-form-field>
@@ -43,8 +48,13 @@
             <mat-label>Password</mat-label>
             <input matInput type="password" [(ngModel)]="registerPassword" name="registerPassword" required />
           </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Password again</mat-label>
+            <input matInput type="password" [(ngModel)]="registerPasswordAgain" name="registerPasswordAgain" required />
+          </mat-form-field>
   
-          <button mat-raised-button color="accent" type="submit" class="auth-button">Register</button>
+          <button mat-raised-button color="accent" type="submit" class="auth-button">{{ 'register' | emojiFormat }}</button>
         </form>
       </mat-card-content>
     </mat-card>

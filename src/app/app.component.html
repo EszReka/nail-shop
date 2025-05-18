@@ -1,5 +1,6 @@
-<app-menu (pageChanged)="changePage($event)"></app-menu>
 
+<app-menu (pageChanged)="changePage($event)"></app-menu>
+<!--
 <app-home *ngIf="page === 'home'"></app-home>
 
 <app-profile 
@@ -11,7 +12,8 @@
 
 <app-product *ngIf="page === 'product'"></app-product>
 <app-cart *ngIf="page === 'cart'"></app-cart>
-
+-->
+<router-outlet></router-outlet>
 <footer class="footer">
     <p>&copy; 2025 Nail Shop | All Rights Reserved</p>
   </footer> 

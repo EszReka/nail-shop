@@ -7,6 +7,10 @@ import { UserObject } from './pages/profile/model/user-object';
 import { ProductComponent } from "./pages/product/product.component";
 import { CartComponent } from "./pages/cart/cart.component";
 import { UserService } from './pages/profile/user.service';
+import { AuthService } from './shared/services/auth.service';
+import { Router, RouterModule } from '@angular/router';
+import { routes } from './app.routes'; 
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +20,8 @@ import { UserService } from './pages/profile/user.service';
      MenuComponent,
      NgIf,
      ProductComponent,
-     CartComponent],
+     CartComponent,
+     RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -25,20 +30,26 @@ export class AppComponent {
   page = "home";
   currentUser: UserObject | null = null;
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService,
+     private authService: AuthService,
+    private router : Router) {}
 
   changePage(page: string){
     if(page == 'logout'){
-      this.userService.logout();
+      this.authService.signOut;
       this.page = 'home';
+      this.router.navigate(['/home']);
     } else {
        this.page = page;
+       this.router.navigate(['/'+page]);
     }
    }
 
    ngOnInit() {
-    this.userService.currentUser$.subscribe((user: UserObject | null) => {
+    this.authService.currentUser.subscribe((user: UserObject | null) => {
       this.currentUser = user;
-    });    
+      console.log('User from AuthService:', user);
+      this.router.navigate(['/home']);
+    });
   }
 }

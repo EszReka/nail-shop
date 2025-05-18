@@ -1,7 +1,7 @@
 import { AdressObject } from "./adress-object";
 
 export class UserObject {
-    id: number;
+    id: string;
     name: string;
     email: string;
     password: string;
@@ -9,13 +9,13 @@ export class UserObject {
     address : AdressObject;
 
     constructor();
-    constructor(name: string,
+    constructor(id: string, name: string,
         email: string, password: string,
-        phone: string, id: number, address : AdressObject);
-    constructor(name?: string,
+        phone: string, address : AdressObject);
+    constructor(id?: string, name?: string,
         email?: string, password?: string,
-        phone?: string,id?: number, address?: AdressObject){
-        this.id = id ?? 0;
+        phone?: string, address?: AdressObject){
+        this.id = id ?? "";
         this.name = name ?? "";
         this.email = email ?? "";
         this.phone = phone ?? "";

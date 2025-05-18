@@ -1,6 +1,6 @@
   <section class="profile-section">
     <div class="profile-container">
-      <h1 class="profile-name">{{ user.name }}</h1>
+      <h1 class="profile-name">Hi!</h1>
       <p class="profile-description">I have ordered x times, in x value in the span of x time.</p>
     </div>
   </section>
@@ -64,7 +64,7 @@
   
         <div class="form-group">
           <button mat-raised-button color="accent" type="submit" [disabled]="!addressForm.valid">
-            <mat-icon>save</mat-icon> Save Address Changes
+            <mat-icon>save</mat-icon> Save Address Changes {{ 'send' | emojiFormat }}
           </button>
         </div>
       </form>

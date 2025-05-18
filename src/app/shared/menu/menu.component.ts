@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { UserObject } from '../../pages/profile/model/user-object';
-import { UserService } from '../../pages/profile/user.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-menu',
@@ -16,7 +16,7 @@ export class MenuComponent implements OnInit {
   menu_icon :string ='bi bi-list';
   currentUser: UserObject | null = null;
 
-  constructor(private userService: UserService) {}
+  constructor(private authService: AuthService) {}
 
   openMenu(){
      this.menuValue =! this.menuValue ;
@@ -30,7 +30,7 @@ export class MenuComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.userService.currentUser$.subscribe((user: UserObject | null) => {
+    this.authService.currentUser.subscribe((user: UserObject | null) => {
       this.currentUser = user;
     }); 
   }

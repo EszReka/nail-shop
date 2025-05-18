@@ -12,6 +12,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import { OnInit } from '@angular/core';
+import { EmojiFormatPipe } from "../../pipes/emoji-format.pipe";
 
 
 @Component({
@@ -26,7 +27,9 @@ import { OnInit } from '@angular/core';
     MatToolbarModule,
     MatDividerModule,
     MatSnackBarModule,
-    MatSelectModule],
+    MatSelectModule,
+    EmojiFormatPipe
+],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })
@@ -45,7 +48,20 @@ export class ProfileComponent implements OnInit {
   };
 
   ngOnInit(){
-    this.addressToUpdate =  this.user.address;
+    this.addressToUpdate = {
+      userId: 0,
+      street: "",
+      city: "",
+      postalcode: 0
+    };
+    /*this.user = {
+      id: "",
+      name: this.user.name,
+      email: this.user.email,
+      password: '',
+      phone: "", 
+      address : this.addressToUpdate
+    }*/
   }
 
   onSave(updatedUser: UserObject) {
