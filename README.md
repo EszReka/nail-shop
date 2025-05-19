@@ -2,7 +2,7 @@
 
 https://angularnailshop.web.app
 
-*** A LISTA NEM TELJES, CSAK A NEHEZEBBEN MEGTALÁLÁLHATÓAKAT ÍRTAM KI ***
+*** Segítség a material elemekhez ***
 
 Legalább 10 különböző Material elem helyes használata.
 	- pages/home/login-register.component
