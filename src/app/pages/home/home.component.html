@@ -1,1 +1,17 @@
-<app-login-register></app-login-register>
+<ng-container *ngIf="currentUser as user; else login">
+
+<div class="welcome-container">
+  <h1 class="glam-title">✨ Welcome Back,  Queen! ✨</h1>
+  <p class="subtitle">Your perfect nails are just a click away 💅</p>
+
+  <div class="cta-buttons">
+    <button routerLink="/product" class="btn glam-btn">  {{ '🛒' | emojiFormat }} Shop Now</button>
+    <button routerLink="/profile" class="btn outline-btn">My Profile</button>
+  </div>
+
+</div>
+</ng-container>
+
+<ng-template #login>
+    <app-login-register></app-login-register>
+</ng-template>

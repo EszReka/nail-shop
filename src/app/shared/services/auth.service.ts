@@ -83,12 +83,17 @@ export class AuthService {
     return signInWithEmailAndPassword(this.auth, email, password);
   }
 
-  signOut(): Promise<void> {
+  async signOut(): Promise<void> {
+  try {
+    console.log("Signing out...");
     localStorage.setItem('isLoggedIn', 'false');
-    return signOut(this.auth).then(() => { 
+    await signOut(this.auth);
     this.router.navigate(['/home']);
-    });
+  } catch (error) {
+    console.error('Sign-out error:', error);
   }
+}
+
 
   isLoggedIn(): Observable<UserObject | null> {
     return this.currentUser;
@@ -103,7 +108,6 @@ export class AuthService {
     try {
       const userCredential = await createUserWithEmailAndPassword(this.auth, email, password);
 
-      // Merge user data with Firebase UID and email
       const completeUserData: UserObject = new UserObject(
         userCredential.user.uid,
         userData.name ?? '',

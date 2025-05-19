@@ -8,8 +8,8 @@ import { LoginRegisterComponent } from './pages/home/login-register/login-regist
 export const routes: Routes = [
   { path: '', component: HomeComponent },            
   { path: 'profile', component: ProfileComponent },
-  { path: 'products', component: ProductComponent },
+  { path: 'product', component: ProductComponent },
   { path: 'cart', component: CartComponent },
-  { path: 'home', component: LoginRegisterComponent },
+  { path: 'home', component: HomeComponent },
   { path: '**', redirectTo: '' }               
 ];

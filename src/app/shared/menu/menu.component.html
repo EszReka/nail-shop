@@ -2,8 +2,8 @@
     <div class="container">
       <div class="row d-flex align-items-center">
           <div class="col-md-3 col-sm-3 col-3">
-              <div class="logo">
-                  <img src="images/logo.png" class="logo" alt="logo">
+              <div class="logo" >
+                  <img src="images/logo.png" class="logo" alt="logo" (click)="closeMenuAndSelectPage('home')">
               </div>
           </div>
           <div class="col-md-9 col-sm-9 col-9 text-end">
@@ -12,12 +12,15 @@
               </div>
               <div class="desktop-menu" [class.mobile-menu]="menuValue">
                   <ul>
-                    <li (click)="closeMenuAndSelectPage(currentUser ? 'home' : 'logout')">
-                        {{ currentUser ? 'Logout' : 'Login' }}
-                      </li>
+                    <li (click)="closeMenuAndSelectPage(currentUser ? 'logout' : 'home')">
+                        <ng-container *ngIf="currentUser != null; else loginText">
+                             Bye {{user!.name}} !
+                            </ng-container>
+                            <ng-template #loginText>Login</ng-template>
+                        </li>
                       <li (click)="closeMenuAndSelectPage('product');">Products</li>
                     <li (click)="closeMenuAndSelectPage('cart');">Cart</li>
-                    <li (click)="closeMenuAndSelectPage('profile');">Profile</li>
+                    <li (click)="closeMenuAndSelectPage(currentUser ? 'profile' : 'home');">Profile</li>
                   </ul>
               </div>
           </div>
