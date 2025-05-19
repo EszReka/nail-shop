@@ -1,23 +1,8 @@
 # Műköröm termék webshop - NailShop
 
-Belépéshez 
-
-email: anna@example.com
-password: anna
-
-Segítség az eligazodáshoz pontozáskor
+https://angularnailshop.web.app
 
 *** A LISTA NEM TELJES, CSAK A NEHEZEBBEN MEGTALÁLÁLHATÓAKAT ÍRTAM KI ***
-
-Legalább 2 különböző attribútum direktíva használata
-	-pages/product/model/product-item.component (2x)
-
-Legalább 2 különböző beépített vezérlési folyamat használata (if, switch, for)
-	-app.component.html
-	-pages/product/model/product-list.component.html
-
-Adatátadás szülő és gyermek komponensek között (legalább 1 @Input és 1 @Output)
-	-pages/profile/profile.component (2x)
 
 Legalább 10 különböző Material elem helyes használata.
 	- pages/home/login-register.component
@@ -36,13 +21,6 @@ Legalább 10 különböző Material elem helyes használata.
 		*mat-card-image
 		*mat-icon-button
 		*mat-icon / matBadge
-		
-Adatbevitel Angular form-ok segítségével megvalósítva (legalább 2)
-	-pages/home/login-register.component
-	-pages/profile/profile.component
-
-Legalább 1 saját Pipe osztály írása és használata
-	-pipes/PriceFormatPipe.pipe
 
 
 
